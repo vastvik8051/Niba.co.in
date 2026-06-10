@@ -76,7 +76,7 @@ document.addEventListener('DOMContentLoaded', () => {
   if (statsBanner) statsObserver.observe(statsBanner);
 
   // ---- SCROLL REVEAL ----
-  const revealEls = document.querySelectorAll('.project-card, .service-item, .quicklink');
+  const revealEls = document.querySelectorAll('.service-item, .quicklink');
   const revealObs = new IntersectionObserver(entries => {
     entries.forEach(e => {
       if (e.isIntersecting) {
