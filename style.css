@@ -148,9 +148,26 @@ ul {
 .topbar {
   background: var(--dark);
   position: relative;
+  /* new */
+  /* position: fixed;
+  top: 0;                    
+  left: 0;
+  width: 100%;                 
+  z-index: 1000;                
+  transition: transform 0.3s ease-in-out;  */
+  /* end  */
   z-index: 200;
 }
 
+/* new  */
+/* .scroll-down .topbar {
+  transform: translateY(-100%); 
+}
+
+.scroll-up .topbar {
+  transform: translateY(0);    
+} */
+/* ////////// */
 .topbar-inner {
   max-width: 1200px;
   margin: 0 auto;
@@ -547,7 +564,8 @@ ul {
 
 
 .projects {
-  padding: 80px 0;
+  padding-top: 80px;
+  padding-bottom: 20px;
   background: var(--off-white);
   border-top: 1px solid var(--border);
 }
@@ -907,6 +925,15 @@ ul {
   overflow: hidden;
 }
 
+.gallery p{
+  font-family: var(--font-display);
+  color: var(--gold);
+  font-size: 44px;
+  text-align: center;
+  font-weight: 400;
+  padding-bottom: 20px;
+}
+
 .gallery-strip {
   display: flex;
   height: 280px;
@@ -923,6 +950,115 @@ ul {
 .gallery-strip img:hover {
   flex: 3;
   filter: grayscale(0%);
+}
+
+/*GALLERY VIEWER seperat -- func */
+.gallery-strip img{
+    cursor: pointer;
+}
+
+.gallery-viewer{
+    position: fixed;
+    inset: 0;
+
+    background: rgba(0,0,0,0.95);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    opacity: 0;
+    visibility: hidden;
+
+    transition: 0.3s ease;
+
+    z-index: 1000;
+}
+
+.gallery-viewer.open{
+    opacity: 1;
+    visibility: visible;
+}
+
+.gallery-viewer img{
+    max-width: 90%;
+    max-height: 90%;
+
+    object-fit: contain;
+}
+
+.gallery-viewer-close,
+.gallery-viewer-prev,
+.gallery-viewer-next{
+    position: absolute;
+
+    border: none;
+    background: rgba(255,255,255,0.15);
+
+    color: white;
+
+    cursor: pointer;
+
+    transition: 0.3s ease;
+}
+
+.gallery-viewer-close:hover,
+.gallery-viewer-prev:hover,
+.gallery-viewer-next:hover{
+    background: var(--gold);
+}
+
+.gallery-viewer-close{
+    top: 25px;
+    right: 25px;
+
+    width: 50px;
+    height: 50px;
+
+    font-size: 32px;
+}
+
+.gallery-viewer-prev,
+.gallery-viewer-next{
+    top: 50%;
+
+    transform: translateY(-50%);
+
+    width: 55px;
+    height: 55px;
+
+    font-size: 34px;
+}
+
+.gallery-viewer-prev{
+    left: 25px;
+}
+
+.gallery-viewer-next{
+    right: 25px;
+}
+
+@media (max-width:768px){
+
+    .gallery-viewer img{
+        max-width: 95%;
+        max-height: 80%;
+    }
+
+    .gallery-viewer-prev,
+    .gallery-viewer-next{
+        width: 45px;
+        height: 45px;
+
+        font-size: 28px;
+    }
+
+    .gallery-viewer-close{
+        width: 45px;
+        height: 45px;
+
+        font-size: 28px;
+    }
 }
 
 /* ============================================================
@@ -1298,6 +1434,10 @@ ul {
 
   .lb-card-body {
     padding: 12px 14px;
+  }
+
+  .gallery p{
+    font-size: 28px;
   }
 
   .services-list {
