@@ -1,0 +1,556 @@
+/* ============================================================
+   PROJECT DETAIL PAGE — project-detail.css
+   ============================================================ */
+
+/* ============================================================
+   HERO
+   ============================================================ */
+.pd-hero {
+  position: relative;
+  height: 90vh;
+  min-height: 580px;
+  overflow: hidden;
+}
+
+.pd-hero-slides {
+  position: relative;
+  height: 100%;
+}
+
+.pd-hero-slide {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  opacity: 0;
+  transition: opacity 0.8s ease;
+}
+
+.pd-hero-slide.active {
+  opacity: 1;
+  z-index: 1;
+}
+
+.pd-hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0,0,0,0.75) 0%, rgba(0,0,0,0.25) 60%, transparent 100%);
+  z-index: 2;
+}
+
+.pd-hero-content {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  z-index: 3;
+  padding: 60px 80px;
+  max-width: 700px;
+  color: var(--white);
+}
+
+.pd-hero-title {
+  font-family: var(--font-display);
+  font-size: clamp(36px, 5.5vw, 64px);
+  font-weight: 600;
+  line-height: 1.05;
+  margin-bottom: 16px;
+  color: var(--white);
+}
+
+.pd-hero-desc {
+  font-size: 15px;
+  font-weight: 300;
+  color: rgba(255,255,255,0.85);
+  max-width: 480px;
+  line-height: 1.7;
+}
+
+/* ============================================================
+   BREADCRUMB
+   ============================================================ */
+.pd-breadcrumb {
+  background: var(--off-white);
+  border-bottom: 1px solid var(--border);
+  padding: 14px 0;
+}
+
+.pd-breadcrumb .container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.pd-breadcrumb a {
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  color: var(--text-muted);
+}
+
+.pd-breadcrumb a:hover {
+  color: var(--gold);
+}
+
+.pd-breadcrumb span {
+  font-size: 12px;
+  color: var(--text-muted);
+}
+
+.pd-breadcrumb span:last-child {
+  color: var(--gold);
+  font-weight: 600;
+}
+
+/* ============================================================
+   OVERVIEW
+   ============================================================ */
+.pd-overview {
+  padding: 80px 0;
+  background: var(--white);
+}
+
+.pd-overview-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: start;
+}
+
+.pd-overview-text p {
+  color: var(--text-muted);
+  margin-bottom: 16px;
+  line-height: 1.8;
+}
+
+.pd-details-table {
+  background: var(--off-white);
+  padding: 36px;
+  border-top: 3px solid var(--gold);
+}
+
+.pd-details-table .section-label {
+  margin-bottom: 20px;
+}
+
+.pd-detail-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 16px;
+  padding: 14px 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.pd-detail-row:last-of-type {
+  border-bottom: none;
+}
+
+.pd-detail-label {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  flex-shrink: 0;
+}
+
+.pd-detail-value {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--dark);
+  text-align: right;
+}
+
+.pd-status-completed {
+  color: #2E7D32;
+  font-weight: 700;
+  font-size: 11px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.pd-brochure-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 24px;
+  background: transparent;
+  border: 1.5px solid var(--gold);
+  color: var(--gold);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  padding: 14px 24px;
+  transition: background var(--transition), color var(--transition);
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.pd-brochure-btn:hover {
+  background: var(--gold);
+  color: var(--white);
+}
+
+/* ============================================================
+   AMENITIES
+   ============================================================ */
+.pd-amenities {
+  padding: 80px 0;
+  background: var(--off-white);
+  border-top: 1px solid var(--border);
+}
+
+.pd-amenities-grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 2px;
+  margin-top: 40px;
+}
+
+.pd-amenity-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  padding: 32px 16px;
+  background: var(--white);
+  text-align: center;
+  transition: background var(--transition), color var(--transition);
+  cursor: default;
+}
+
+.pd-amenity-item:hover {
+  background: var(--gold);
+  color: var(--white);
+}
+
+.pd-amenity-item:hover .pd-amenity-icon svg {
+  stroke: var(--white);
+}
+
+.pd-amenity-icon {
+  width: 40px;
+  height: 40px;
+}
+
+.pd-amenity-icon svg {
+  width: 100%;
+  height: 100%;
+  stroke: var(--gold);
+  transition: stroke var(--transition);
+}
+
+.pd-amenity-item span {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+  line-height: 1.4;
+}
+
+/* ============================================================
+   GALLERY
+   ============================================================ */
+.pd-gallery {
+  padding: 80px 0 0;
+  background: var(--white);
+}
+
+.pd-gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: 320px 280px;
+  gap: 4px;
+  margin-top: 40px;
+}
+
+.pd-gallery-item {
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.pd-gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.pd-gallery-item:hover img {
+  transform: scale(1.05);
+}
+
+.pd-gallery-item:hover .mask-overlay {
+  opacity: 1;
+}
+
+.pd-gallery-large {
+  grid-column: span 2;
+}
+
+/* ============================================================
+   FLOOR PLANS
+   ============================================================ */
+.pd-floorplans {
+  padding: 80px 0;
+  background: var(--off-white);
+  border-top: 1px solid var(--border);
+}
+
+.pd-floorplan-tabs {
+  display: flex;
+  gap: 0;
+  margin-top: 40px;
+  border-bottom: 2px solid var(--border);
+}
+
+.pd-fp-tab {
+  background: none;
+  border: none;
+  padding: 14px 28px;
+  font-family: var(--font-body);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  cursor: pointer;
+  position: relative;
+  transition: color var(--transition);
+}
+
+.pd-fp-tab::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: var(--gold);
+  transform: scaleX(0);
+  transition: transform var(--transition);
+}
+
+.pd-fp-tab.active {
+  color: var(--gold);
+}
+
+.pd-fp-tab.active::after {
+  transform: scaleX(1);
+}
+
+.pd-fp-tab:hover {
+  color: var(--gold);
+}
+
+.pd-floorplan-panels {
+  margin-top: 32px;
+}
+
+.pd-fp-panel {
+  display: none;
+}
+
+.pd-fp-panel.active {
+  display: block;
+}
+
+.pd-fp-panel img {
+  width: 100%;
+  max-height: 520px;
+  object-fit: contain;
+  background: var(--white);
+  border: 1px solid var(--border);
+}
+
+/* ============================================================
+   LOCATION
+   ============================================================ */
+.pd-location {
+  padding: 80px 0;
+  background: var(--white);
+}
+
+.pd-location-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.5fr;
+  gap: 60px;
+  align-items: start;
+  margin-top: 40px;
+}
+
+.pd-location-benefits {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.pd-loc-item {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 20px 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.pd-loc-item:first-child {
+  border-top: 1px solid var(--border);
+}
+
+.pd-loc-icon {
+  width: 40px;
+  height: 40px;
+  background: var(--off-white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.pd-loc-icon svg {
+  width: 20px;
+  height: 20px;
+  stroke: var(--gold);
+}
+
+.pd-loc-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.pd-loc-name {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--dark);
+}
+
+.pd-loc-time {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--gold);
+  background: rgba(184,150,46,0.08);
+  padding: 4px 10px;
+}
+
+.pd-map-wrap {
+  height: 440px;
+  overflow: hidden;
+  border: 1px solid var(--border);
+}
+
+.pd-map-wrap iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+/* ============================================================
+   CONTACT OVERRIDE
+   ============================================================ */
+.pd-contact {
+  border-top: 1px solid var(--border);
+}
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+@media (max-width: 1100px) {
+  .pd-overview-grid {
+    grid-template-columns: 1fr;
+    gap: 48px;
+  }
+
+  .pd-amenities-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .pd-location-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .pd-map-wrap {
+    height: 300px;
+  }
+}
+
+@media (max-width: 768px) {
+  .pd-hero-content {
+    padding: 40px 24px;
+  }
+
+  .pd-overview{
+    padding: 40px 0;
+  }
+
+  .pd-amenities{
+    padding: 40px 0;
+  }
+
+  .pd-gallery{
+    padding: 40px 0;
+  }
+
+  .pd-amenities-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .pd-gallery-grid {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto;
+  }
+
+  .pd-gallery-large {
+    grid-column: span 2;
+  }
+
+  .pd-gallery-item {
+    height: 200px;
+  }
+
+  .pd-floorplans{
+    padding: 40px 0;
+  }
+
+  .pd-floorplan-tabs {
+    flex-wrap: wrap;
+  }
+
+  .pd-location{
+    padding: 40px 0;
+  }
+
+  .pd-details-table {
+    padding: 24px 20px;
+  }
+
+  .pd-contact{
+    padding: 40px 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .pd-amenities-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .pd-gallery-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .pd-gallery-large {
+    grid-column: span 1;
+  }
+
+  .pd-gallery-item {
+    height: 220px;
+  }
+}
