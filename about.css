@@ -1,0 +1,378 @@
+/* ============================================================
+   ABOUT PAGE — about.css
+   ============================================================ */
+
+/* ── HERO ── */
+.about-hero {
+  position: relative;
+  height: 90vh;
+  min-height: 560px;
+  background: url('https://niba-ventures.vercel.app/images/image3.jpg') center/cover no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.about-hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(184, 150, 46, 0.45);
+}
+
+.about-hero-content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  color: var(--white);
+}
+
+.about-hero-title {
+  font-family: var(--font-display);
+  font-size: clamp(48px, 8vw, 96px);
+  font-weight: 400;
+  line-height: 1;
+  letter-spacing: 6px;
+  color: var(--white);
+}
+
+.about-hero-title span {
+  font-weight: 600;
+}
+
+.about-hero-sub {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.85);
+  margin-top: 16px;
+}
+
+/* ── ABOUT INTRO ── */
+.about-intro {
+  padding: 80px 0;
+  background: var(--white);
+}
+
+.about-intro-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.6fr;
+  gap: 80px;
+  align-items: start;
+}
+
+.about-intro-right {
+  border-left: 3px solid var(--gold);
+  padding-left: 36px;
+}
+
+.about-intro-tagline {
+  font-family: var(--font-display);
+  font-size: 18px;
+  font-weight: 400;
+  font-style: italic;
+  color: var(--gold);
+  margin-bottom: 16px;
+}
+
+.about-intro-right p:last-child {
+  color: var(--text-muted);
+  line-height: 1.9;
+  font-size: 15px;
+}
+
+/* ── STATS ── */
+.about-stats {
+  background: var(--light-gray);
+  padding: 48px 0;
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+}
+
+.about-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 2px;
+}
+
+.about-stat-card {
+  background: var(--white);
+  padding: 36px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.about-stat-num {
+  font-family: var(--font-display);
+  font-size: clamp(28px, 3vw, 40px);
+  font-weight: 400;
+  color: var(--gold);
+  line-height: 1;
+}
+
+.about-stat-label {
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  color: var(--text-muted);
+  text-transform: uppercase;
+}
+
+/* ── STORY ── */
+.about-story {
+  padding: 80px 0;
+  background: var(--off-white);
+}
+
+.about-story-text {
+  max-width: 820px;
+  margin: 0 auto;
+  text-align: center;
+  color: var(--text-muted);
+  line-height: 1.9;
+  font-size: 15px;
+}
+
+/* ── LEGACY ── */
+.about-legacy {
+  position: relative;
+  background: url('https://niba-ventures.vercel.app/images/image28.jpg') center/cover no-repeat fixed;
+  padding: 100px 0;
+}
+
+.about-legacy-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.72);
+}
+
+.about-legacy-grid {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+}
+
+.about-legacy-img {
+  height: 420px;
+  overflow: hidden;
+}
+
+.about-legacy-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.about-legacy-text p {
+  color: rgba(255,255,255,0.75);
+  line-height: 1.9;
+  margin-bottom: 16px;
+  font-size: 15px;
+}
+
+/* ── VISION & MISSION ── */
+.about-vision {
+  padding: 80px 0;
+  background: var(--off-white);
+  text-align: center;
+}
+
+.about-vision-block {
+  margin-bottom: 60px;
+}
+
+.about-vision-text {
+  max-width: 700px;
+  margin: 0 auto;
+  color: var(--text-muted);
+  line-height: 1.9;
+  font-size: 15px;
+}
+
+.about-mission-block {
+  border-top: 1px solid var(--border);
+  padding-top: 60px;
+}
+
+.about-mission-title {
+  font-family: var(--font-display);
+  font-size: clamp(24px, 3vw, 36px);
+  font-weight: 400;
+  color: var(--dark);
+  margin-bottom: 20px;
+}
+
+/* ── WHY US ── */
+.about-why {
+  padding: 80px 0;
+  background: var(--white);
+}
+
+.about-why-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: 280px 280px;
+  gap: 12px;
+}
+
+.about-why-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 4px;
+  cursor: default;
+}
+
+.about-why-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.about-why-card:hover img {
+  transform: scale(1.05);
+}
+
+.about-why-label {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 20px 24px;
+  background: linear-gradient(to top, rgba(0,0,0,0.75) 0%, transparent 100%);
+  color: var(--white);
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+/* ── CONTACT ── */
+.about-contact {
+  padding: 80px 0;
+  background: var(--light-gray);
+}
+
+.about-contact-card {
+  background: var(--white);
+  border-radius: 4px;
+  padding: 60px;
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 80px;
+  align-items: center;
+  box-shadow: 0 4px 32px rgba(0,0,0,0.07);
+}
+
+.about-contact-left .section-title {
+  margin-bottom: 16px;
+}
+
+.about-contact-left p {
+  color: var(--text-muted);
+  line-height: 1.8;
+  margin-bottom: 32px;
+}
+
+.about-contact-actions {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.about-contact-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 18px;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  border: 1.5px solid var(--border);
+  color: var(--dark);
+  transition: border-color var(--transition), color var(--transition);
+  text-decoration: none;
+}
+
+.about-contact-btn:hover {
+  border-color: var(--gold);
+  color: var(--gold);
+}
+
+.about-contact-btn svg {
+  flex-shrink: 0;
+}
+
+/* ── RESPONSIVE ── */
+@media (max-width: 1100px) {
+  .about-stats-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .about-legacy-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .about-legacy-img {
+    height: 300px;
+  }
+
+  .about-contact-card {
+    grid-template-columns: 1fr;
+    gap: 40px;
+    padding: 40px;
+  }
+}
+
+@media (max-width: 768px) {
+  .about-intro-grid {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  .about-intro-right {
+    border-left: none;
+    border-top: 3px solid var(--gold);
+    padding-left: 0;
+    padding-top: 24px;
+  }
+
+  .about-stats-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .about-why-grid {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto;
+  }
+
+  .about-why-card {
+    height: 220px;
+  }
+
+  .about-contact-card {
+    padding: 28px 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .about-stats-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .about-why-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .about-why-card {
+    height: 200px;
+  }
+
+  .about-contact-actions {
+    flex-direction: column;
+  }
+}
