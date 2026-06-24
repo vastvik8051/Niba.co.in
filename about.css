@@ -7,7 +7,7 @@
   position: relative;
   height: 90vh;
   min-height: 560px;
-  background: url('https://niba-ventures.vercel.app/images/image3.jpg') center/cover no-repeat;
+  background: url('./assets/img/image3.webp') center/cover no-repeat;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -16,7 +16,11 @@
 .about-hero-overlay {
   position: absolute;
   inset: 0;
-  background: rgba(184, 150, 46, 0.45);
+  /* background: rgba(184, 150, 46, 0.45); */
+  /* new */
+  background: rgba(10, 20, 38, 0.72); 
+  /* Smooth background blur */
+  backdrop-filter: blur(2px);
 }
 
 .about-hero-content {
@@ -137,14 +141,15 @@
 /* ── LEGACY ── */
 .about-legacy {
   position: relative;
-  background: url('https://niba-ventures.vercel.app/images/image28.jpg') center/cover no-repeat fixed;
+  background: url('./assets/img/image28.webp') center/cover no-repeat fixed;
   padding: 100px 0;
 }
 
 .about-legacy-overlay {
   position: absolute;
   inset: 0;
-  background: rgba(0,0,0,0.72);
+  /* background: rgba(0,0,0,0.72); */
+    background: rgba(10, 20, 38, 0.72);
 }
 
 .about-legacy-grid {
