@@ -1,0 +1,468 @@
+/* loader */
+#loader{
+    position:fixed;
+    inset:0;
+
+    background: black;
+    color: burlywood;
+
+    z-index:99999;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    transition:opacity .6s ease,
+               visibility .6s ease;
+}
+
+#loader.hide{
+    opacity:0;
+    visibility:hidden;
+}
+
+.loader-content{
+    width:320px;
+    text-align:center;
+}
+
+.loader-content img{
+    width:100%;
+    height:220px;
+    object-fit:cover;
+    border-radius:12px;
+    margin-bottom:30px;
+}
+
+.loader-text{
+    font-size:14px;
+    letter-spacing:3px;
+    text-transform:uppercase;
+    margin-bottom:20px;
+}
+
+.progress-wrapper{
+    width:100%;
+    height:4px;
+    background:#ddd;
+    border-radius:999px;
+    overflow:hidden;
+}
+
+#progress-bar{
+    width:0%;
+    height:100%;
+    background:burlywood;
+    transition:width .25s ease;
+}
+
+#progress-text{
+    margin-top:12px;
+    font-size:14px;
+    font-weight:600;
+}
+
+
+/* =========================================
+   BACKGROUND VIDEO
+========================================= */
+
+body {
+    background: beige;
+}
+
+.video-bg {
+    position: fixed;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+}
+
+
+/* =========================================
+   HERO SECTION
+   — padded so background video peeks on sides
+   — hero card has the main image inside it
+========================================= */
+
+.project-hero {
+    padding: 100px 60px 40px; /* top padding clears navbar; sides show video */
+}
+
+/* the card itself — rounded, clipped, full image inside */
+.project-hero-card {
+    position: relative;
+    width: 100%;
+    height: 75vh;
+    border-radius: 24px;
+    overflow: hidden;
+}
+
+/* main hero image fills the card */
+.project-hero-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* dark gradient overlay — heavier on left so text is readable */
+.project-hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        to right,
+        rgba(0,0,0,0.75) 0%,
+        rgba(0,0,0,0.3) 60%,
+        rgba(0,0,0,0.05) 100%
+    );
+}
+
+/* text block — top left of the card */
+.project-hero-content {
+    position: absolute;
+    bottom: 30px;
+    left: 50px;
+    z-index: 2;
+    color: #fff;
+    max-width: 800px;
+}
+
+/* small category label above title */
+.project-hero-category {
+    font-size: 11px;
+    letter-spacing: 3px;
+    color: var(--primary-color);
+    margin-bottom: 16px;
+    text-transform: uppercase;
+}
+
+.project-hero-title {
+    font-size: clamp(42px, 6vw, 80px);
+    font-weight: 400;
+    line-height: 1;
+    margin-bottom: 20px;
+}
+
+.project-hero-desc {
+    font-size: 15px;
+    line-height: 1.8;
+    color: rgba(255,255,255,0.75);
+    margin-bottom: 30px;
+    max-width: 400px;
+}
+
+/* horizontally scrollable thumbnail strip */
+.project-hero-thumbs {
+    display: flex;
+    gap: 10px;
+    overflow-x: auto;
+    scrollbar-width: none; /* hide scrollbar Firefox */
+    padding-bottom: 4px;
+    max-width: 100%;
+}
+
+.project-hero-thumbs::-webkit-scrollbar {
+    display: none; /* hide scrollbar Chrome/Safari */
+}
+
+.project-hero-thumbs img {
+    width: 280px;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 8px;
+    flex-shrink: 0; /* don't squish, just scroll */
+    opacity: 0.7;
+    border: 2px solid transparent;
+    cursor: pointer;
+    transition: opacity 0.3s ease, border-color 0.3s ease;
+}
+
+.project-hero-thumbs img:hover {
+    opacity: 1;
+    border-color: var(--primary-color);
+}
+
+/* =========================================
+   THUMBNAIL ARROWS
+========================================= */
+.thumbs-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.thumb-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
+
+    background: rgba(255, 255, 255, 0.3);
+    border: none;
+    color: #fff;
+
+    width: 28px;
+    height: 52px;
+    border-radius: 4px;
+
+    font-size: 24px;
+    cursor: pointer;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+
+    transition: background 0.2s ease, box-shadow 0.2s ease;
+}
+
+.thumb-arrow:hover {
+    background: rgba(255, 255, 255, 0.5);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
+}
+
+.thumb-prev {
+    left: 0;
+    border-radius: 0 4px 4px 0; /* flat on left, rounded on right */
+}
+
+.thumb-next {
+    right: 0;
+    border-radius: 4px 0 0 4px; /* rounded on left, flat on right */
+}
+
+
+/* =========================================
+   GALLERY
+========================================= */
+
+.portfolio-gallery {
+    padding: 40px 60px 90px;
+    background: transparent;
+}
+
+.gallery-grid {
+    columns: 4;
+    column-gap: 18px;
+}
+
+.gallery-grid img {
+    width: 100%;
+    margin-bottom: 18px;
+    border-radius: 12px;
+    display: block;
+    break-inside: avoid;
+    transition: 0.7s ease;
+    cursor: pointer;
+}
+
+.gallery-grid img:hover {
+    transform: scale(1.02);
+    opacity: 0.9;
+}
+
+/* =========================================
+   LIGHTBOX
+========================================= */
+
+.lightbox {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.95);
+    z-index: 99999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.4s ease, visibility 0.4s ease;
+}
+
+.lightbox.lightbox-open {
+    opacity: 1;
+    visibility: visible;
+}
+
+.lightbox-img {
+    max-width: 88vw;
+    max-height: 85vh;
+    object-fit: contain;
+    border-radius: 8px;
+}
+
+.lightbox-close {
+    position: absolute;
+    top: 24px;
+    right: 32px;
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 24px;
+    cursor: pointer;
+    opacity: 0.7;
+    transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.lightbox-close:hover {
+    opacity: 1;
+    transform: rotate(90deg);
+}
+
+.lightbox-prev,
+.lightbox-next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: #fff;
+    font-size: 32px;
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.2s ease;
+}
+
+.lightbox-prev:hover,
+.lightbox-next:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.lightbox-prev { left: 24px; }
+.lightbox-next { right: 24px; }
+
+/* =========================================
+   RESPONSIVE — 1100px
+========================================= */
+
+@media(max-width: 1100px) {
+
+    .project-hero {
+        padding: 100px 30px 30px;
+    }
+
+    .project-hero-card {
+        height: 70vh;
+    }
+
+    .project-hero-thumbs img {
+        width: 200px;
+        height: 130px;
+    }
+
+    .gallery-grid {
+        columns: 3;
+    }
+
+    .portfolio-gallery {
+        padding: 30px 30px 90px;
+    }
+}
+
+
+/* =========================================
+   RESPONSIVE — 768px
+========================================= */
+
+@media(max-width: 768px) {
+
+    .project-hero {
+        padding: 90px 16px 24px;
+    }
+
+    .project-hero-card {
+        height: 75vh;
+        border-radius: 16px;
+    }
+
+    .project-hero-content {
+        bottom: 24px; /* was top:30px — fixed */
+        left: 24px;
+        right: 24px;
+        max-width: 100%;
+    }
+
+    .project-hero-title {
+        font-size: clamp(28px, 8vw, 48px);
+    }
+
+    .project-hero-desc {
+        font-size: 14px;
+        margin-bottom: 20px;
+    }
+
+    .project-hero-thumbs img {
+        width: 140px;  /* scaled down but still usable */
+        height: 90px;
+    }
+
+    .thumb-arrow {
+        height: 90px; /* match thumb height */
+    }
+
+    .gallery-grid {
+        columns: 2;
+        column-gap: 12px;
+    }
+
+    .gallery-grid img {
+        margin-bottom: 12px;
+        border-radius: 8px;
+    }
+
+    .portfolio-gallery {
+        padding: 24px 16px 90px;
+    }
+}
+
+
+/* =========================================
+   RESPONSIVE — 480px
+========================================= */
+
+@media(max-width: 480px) {
+
+    .project-hero {
+        padding: 80px 10px 16px;
+    }
+
+    .project-hero-card {
+        height: 50vh;
+        border-radius: 12px;
+    }
+
+    .project-hero-content {
+        bottom: 20px;
+        left: 16px;
+        right: 16px;
+    }
+
+    .project-hero-desc {
+        display: none; /* hides desc on very small screens to save space */
+    }
+
+    .project-hero-thumbs img {
+        width: 110px;
+        height: 72px;
+    }
+
+    .thumb-arrow {
+        height: 72px; /* match thumb height */
+    }
+
+    .gallery-grid {
+        columns: 1;
+    }
+
+    .portfolio-gallery {
+        padding: 30px 30px 80px;
+    }
+}
