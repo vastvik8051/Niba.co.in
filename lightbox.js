@@ -8,13 +8,17 @@ document.addEventListener('DOMContentLoaded', () => {
   const groups = {
     residential: document.getElementById('residentialProjects'),
     commercial: document.getElementById('commercialProjects'),
-    industrial: document.getElementById('industrialProjects')
+    industrial: document.getElementById('industrialProjects'),
+    interior: document.getElementById('interiorProjects'),
+    solar: document.getElementById('solarProjects')
   };
 
   const titles = {
     residential: 'Residential Projects',
     commercial: 'Commercial Projects',
-    industrial: 'Industrial Projects'
+    industrial: 'Industrial Projects',
+    interior: 'Interior Projects',
+    solar: 'Solar Projects'
   };
 
   function openLightbox(category) {
