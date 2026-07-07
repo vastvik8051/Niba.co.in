@@ -513,7 +513,9 @@
   }
 
   .pd-gallery-item {
-    height: 200px;
+    /* height: 200px; */
+    height: auto;
+
   }
 
   .pd-floorplans{
