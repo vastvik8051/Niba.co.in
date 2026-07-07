@@ -1350,6 +1350,23 @@ ul {
   box-shadow: 0 6px 24px rgba(37, 211, 102, 0.5);
 }
 
+/* num  */
+.lb-card-img {
+  position: relative; /* needed so the number positions relative to this box, not the whole page */
+}
+
+.img-number {
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  background: rgba(0, 0, 0, 0.7);
+  color: #fff;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-size: 14px;
+  pointer-events: none; /* so it doesn't block clicks on the <a> link */
+}
+
 /* ============================================================
    RESPONSIVE
    ============================================================ */
